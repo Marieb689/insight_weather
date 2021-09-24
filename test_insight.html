@@ -1,0 +1,18 @@
+<script>
+    (function setupNbinteract() {
+        // If NbInteract hasn't loaded, wait one second and try again
+        if (window.NbInteract === undefined) {
+        setTimeout(setupNbinteract, 1000)
+        return
+        }
+
+        var interact = new window.NbInteract({
+        spec: 'Marieb689/insight_weather/main',
+        baseUrl: 'https://mybinder.org',
+        provider: 'gh',
+        })
+        interact.prepare()
+
+        window.interact = interact
+    })()
+</script>
